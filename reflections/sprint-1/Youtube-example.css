@@ -1,0 +1,16 @@
+h1 {
+  color: red;
+  font-size: 25px;
+  background: black;
+  padding: 20px;
+  font-family: Muli, 'Arial Narrow', Arial, sans-serif;
+}
+body {
+  background: rgb(99, 47, 255);
+}
+
+button {
+  background-color: rgb(232, 136, 19);
+  border: none;
+  border-radius: 10px; /* Applies a 10px radius to all four corners */
+}
