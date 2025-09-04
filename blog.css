@@ -1,0 +1,69 @@
+body {
+  background-color: rgb(191, 154, 193);
+  font-family: 'Muli', sans-serif;
+  /* border-width alone does nothing without border-style/color */
+  /* border: 200px solid transparent;  /* example if you really want space */
+}
+
+h1 {
+  text-align: center;
+  background: rgb(193, 71, 193);
+  padding: 20px;
+}
+
+/* widescreen displays */
+@media only screen and (min-width: 920px) {
+  .container {
+    max-width: 1100px; /* keep line length readable */
+    margin: 0 auto; /* center the blog content */
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* main + sidebar */
+    gap: 2rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    background: yellow;
+  }
+}
+
+/* tablets */
+@media only screen and (max-width: 919px) {
+  .container {
+    display: block; /* stack everything vertically */
+    padding: 2rem;
+  }
+
+  .sidebar {
+    margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: 1.8rem; /* slightly larger titles than widescreen rule */
+  }
+}
+
+/* phones */
+@media only screen and (max-width: 400px) {
+  .container {
+    font-size: 0.9rem; /* small but readable (0.1rem was tiny) */
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    background: rgb(37, 190, 40); /* green */
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
