@@ -1,44 +1,44 @@
 :root {
-  --bg: #f6eef8; /* soft lilac background */
-  --text: #1f2937; /* slate-900 */
-  --brand: #c147c1; /* h1 purple */
+  /* Colors */
+  --bg: #f6eef8;
+  --text: #1f2937;
+  --brand: #c147c1;
   --brand-700: #8f2a8f;
-  --accent: #2aa34a; /* optional green accent */
+  --accent: #2aa34a;
   --card: #ffffff;
-  --muted: #6b7280; /* gray-500 */
+  --muted: #6b7280;
   --code-bg: #111827;
   --code-fg: #e5e7eb;
+
+  /* Layout tokens */
+  --max-w: 72ch;          /* readable line length for article content */
+  --site-w: 1100px;       /* page/grid max width */
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
 }
 
-* {
-  box-sizing: border-box;
-}
-html {
-  color-scheme: light;
-}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
 
 body {
   margin: 0;
   min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Mulish', 'Muli', system-ui, -apple-system, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Mulish', 'Muli', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.7;
-  /* elegant brand stripe on the left */
-  border-inline-start: 6px solid var(--brand-700);
+  /* fixed: add style+color so the stripe renders */
+  border-inline-start: 16px solid var(--bg);
 }
 
-/* Constrain readable width for body-level content (your simplified HTML uses direct children) */
+/* Constrain readable width for simple documents */
 body > :where(h1, h2, h3, p, ul, ol, pre, blockquote) {
-  width: min(72ch, 100% - 2rem);
+  width: min(var(--max-w), 100% - 2rem);
   margin-inline: auto;
 }
 
 /* Gentle vertical rhythm */
-body > * + * {
-  margin-top: 1rem;
-}
+body > * + * { margin-top: 1rem; }
 
 /* Images */
 img {
@@ -48,39 +48,32 @@ img {
   border-radius: 8px;
 }
 
-/* ---- Layout (if/when you use these wrappers) ---- */
+/* ---- Layout wrappers (optional) ---- */
 .container {
-  width: min(900px, 100% - 2rem);
+  width: min(var(--site-w), 100% - 2rem);
   margin-inline: auto;
   padding: 1.25rem;
-  display: block; /* stacked by default (mobile-first) */
+  display: block;
 }
 
 .main {
-  width: min(900px, 100% - 2rem);
+  width: min(var(--site-w), 100% - 2rem);
   margin-inline: auto;
   padding-block: 1rem;
   display: flex;
-  flex-direction: column; /* stack on small screens */
+  flex-direction: column;
   gap: 2rem;
 }
 
-.content {
-  flex: 1 1 auto;
-}
-
-.side-image {
-  margin: 0;
-} /* for <figure> */
+.content { flex: 1 1 auto; }
+.side-image { margin: 0; } /* for <figure> */
 .side-image img {
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* Optional “flow” spacing helper */
-.flow > * + * {
-  margin-top: 1rem;
-}
+/* Optional flow helper */
+.flow > * + * { margin-top: 1rem; }
 
 /* ---- Typography ---- */
 h1 {
@@ -88,15 +81,13 @@ h1 {
   background: var(--brand);
   color: #fff;
   padding: 1rem 1.25rem;
-  border-radius: 12px;
+  border-radius: var(--radius);
   margin: 1.5rem auto;
   font-size: clamp(1.9rem, 1.2rem + 2vw, 2.6rem);
   line-height: 1.2;
 }
 
-/* Subheadings with a subtle accent */
-h2,
-h3 {
+h2, h3 {
   margin-top: 2rem;
   line-height: 1.25;
 }
@@ -104,22 +95,11 @@ h2 {
   padding-inline-start: 0.5rem;
   border-inline-start: 4px solid var(--brand-700);
 }
-h3 {
-  color: var(--brand-700);
-}
+h3 { color: var(--brand-700); }
 
-/* Body text niceties */
-p,
-li {
-  font-size: 1.05rem;
-}
-ul,
-ol {
-  padding-inline-start: 1.25rem;
-}
-li + li {
-  margin-top: 0.25rem;
-}
+p, li { font-size: 1.05rem; }
+ul, ol { padding-inline-start: 1.25rem; }
+li + li { margin-top: 0.25rem; }
 
 /* Links */
 a {
@@ -128,32 +108,29 @@ a {
   text-decoration-thickness: 2px;
 }
 a:hover,
-a:focus-visible {
-  color: var(--brand);
-}
+a:focus-visible { color: var(--brand); }
 
-/* Code & preformatted */
+/* Code */
 pre {
   background: var(--code-bg);
   color: var(--code-fg);
   padding: 1rem 1.25rem;
-  border-radius: 12px;
+  border-radius: var(--radius);
   overflow-x: auto;
   border: 1px solid #0b1220;
   border-inline-start: 4px solid var(--brand-700);
 }
 code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   font-size: 0.95rem;
 }
 
-/* Blockquotes (if you add any) */
+/* Blockquotes */
 blockquote {
   margin: 1rem auto;
   padding: 0.5rem 1rem;
   border-inline-start: 4px solid var(--brand-700);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255,255,255,0.7);
   border-radius: 8px;
   color: var(--muted);
 }
@@ -172,8 +149,8 @@ nav a {
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.06);
   color: var(--brand-700);
 }
 nav a:hover,
@@ -184,18 +161,15 @@ nav a:focus-visible {
 }
 
 /* ---- Sidebar & cards ---- */
-.sidebar {
-  margin-top: 2rem;
-}
+.sidebar { margin-top: 2rem; }
 
 .card {
   background: var(--card);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius);
   padding: 1rem 1.25rem;
-  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
-  /* brand accent on the left */
-  border-inline-start: 4px solid var(--brand-700);
+  box-shadow: var(--shadow);
+  border-inline-start: 4px solid var(--brand-700); /* accent */
 }
 
 /* ---- Breakpoints ---- */
@@ -208,44 +182,3 @@ nav a:focus-visible {
   .sidebar {
     margin-top: 0;
     position: sticky;
-    top: 1rem; /* handy TOC/links */
-  }
-
-  .main {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  .side-image {
-    flex: 0 0 320px;
-  }
-  .content {
-    flex: 1 1 0;
-  }
-}
-
-/* ---- A11y niceties ---- */
-:focus-visible {
-  outline: 2px solid var(--brand-700);
-  outline-offset: 2px;
-}
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-  border: 0;
-  padding: 0;
-  margin: -1px;
-}
-
-/* Reduce motion for those who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}

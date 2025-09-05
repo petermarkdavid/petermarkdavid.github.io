@@ -4,229 +4,80 @@
     <meta charset="utf-8" />
     <link href="../styles/blog.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Padding, Border & Margin — a friendly, step‑by‑step guide</title>
-    <meta
-      name="description"
-      content="A walkthrough of CSS padding, border, and margin"
-    />
+    <title>Margin vs Border vs Padding — explained simply</title>
+    <meta name="description" content="Margin, border, and padding" />
   </head>
   <body>
-    <h1>Padding, Border &amp; Margin — a friendly, step‑by‑step guide</h1>
+    <article>
+      <h1>Margin vs Border vs Padding</h1>
 
-    <p>
-      Ever looked at a box on a web page and wondered why the text hugs the
-      edge, or why two boxes seem glued together? Three little settings control
-      that coziness and spacing: <strong>padding</strong>,
-      <strong>border</strong>, and <strong>margin</strong>.
-    </p>
+      <p>Imagine a postcard in a picture frame hanging on a wall.</p>
+      <ul>
+        <li>
+          <strong>Padding</strong> is the
+          <em>mat board inside the frame</em>—the cushion between the postcard
+          and the frame.
+        </li>
+        <li>
+          <strong>Border</strong> is the <em>frame</em> itself—the visible edge
+          around the postcard.
+        </li>
+        <li>
+          <strong>Margin</strong> is the
+          <em>empty wall space around the frame</em>—how far it sits from other
+          frames.
+        </li>
+      </ul>
 
-    <p>If a cardboard box is your mental model:</p>
-    <ul>
-      <li>
-        <strong>Padding</strong> = the bubble‑wrap <em>inside</em> the box
-        (keeps the item comfy)
-      </li>
-      <li><strong>Border</strong> = the cardboard <em>edge</em> of the box</li>
-      <li>
-        <strong>Margin</strong> = the empty space <em>around</em> the box so
-        it’s not squished by other boxes
-      </li>
-    </ul>
+      <pre>
+[ margin ]   ← outside space (separates from neighbors)
+[  border ]  ← visible edge
+[ padding ]  ← inside space (breathing room for the content)
+[ content ]  ← the text/image itself</pre
+      >
 
-    <pre>
-[ margin ]   (transparent outer space)
-[  border ]  (visible edge)
-[ padding ]  (inner space with background)
-[ content ]  (your text or images)</pre
-    >
+      <h2>Why it matters</h2>
 
-    <h2>TL;DR</h2>
-    <ul>
-      <li>
-        Use <strong>padding</strong> to give your text breathing room
-        <em>inside</em> a box.
-      </li>
-      <li>Use a <strong>border</strong> when you want a visible edge.</li>
-      <li>
-        Use <strong>margin</strong> to create <em>outside</em> space between
-        boxes.
-      </li>
-    </ul>
+      <h3>Padding (inside space)</h3>
+      <ul>
+        <li>
+          Makes text and images easier to read by giving them breathing room.
+        </li>
+        <li><strong>Increases the clickable/tap area</strong> of buttons.</li>
+        <li>Background colour shows here because it’s inside the box.</li>
+      </ul>
 
-    <h2>1) Copy‑paste starter file (hands‑on!)</h2>
-    <p>
-      Create a file named <code>box.html</code>, paste this in, and open it in
-      your browser.
-    </p>
-    <pre><code>&lt;!doctype html&gt;
-&lt;meta charset=&quot;utf-8&quot; /&gt;
-&lt;title&gt;Padding demo&lt;/title&gt;
-&lt;style&gt;
-  * { box-sizing: border-box; }
-  body {
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    padding: 24px;
-    background: #f6eef8; /* soft lilac so the box stands out */
-  }
-  .card {
-    width: 300px;          /* we’ll keep this constant for the demo */
-    background: white;     /* easy to see */
-    /* we’ll add padding/border/margin in the steps below */
-  }
-&lt;/style&gt;
-&lt;div class=&quot;card&quot;&gt;A short note goes here.&lt;/div&gt;</code></pre>
+      <h3>Border (the frame)</h3>
+      <ul>
+        <li>Adds a clear outline to separate a box from what’s around it.</li>
+        <li>Can be thin, thick, dashed, rounded—purely visual decoration.</li>
+      </ul>
 
-    <p>You should see a simple white rectangle with text.</p>
+      <h3>Margin (outside space)</h3>
+      <ul>
+        <li>Controls the gap <em>between</em> boxes.</li>
+        <li>Doesn’t change the clickable area.</li>
+        <li>Always transparent—no colour fills here.</li>
+      </ul>
 
-    <h2>2) Add <em>padding</em> (space inside the box)</h2>
-    <p>Edit the <code>.card</code> rule:</p>
-    <pre><code>.card {
-  padding: 16px;
-}</code></pre>
-    <p><strong>What you’ll notice</strong></p>
-    <ul>
-      <li>The text moves <em>away from the edges</em>.</li>
-      <li>It’s easier to read.</li>
-      <li>
-        Your box’s background (white) <strong>extends into the padding</strong>,
-        because padding is <em>inside</em> the box.
-      </li>
-    </ul>
-    <p>
-      <strong>Try this:</strong> change <code>padding: 16px;</code> →
-      <code>padding: 40px;</code> and watch the text breathe.
-    </p>
+      <h2>Quick cheat sheet</h2>
+      <ul>
+        <li>
+          Need your button to feel bigger and easier to tap?
+          <strong>Add padding.</strong>
+        </li>
+        <li>Need a clearer edge? <strong>Add a border.</strong></li>
+        <li>Need more space between sections? <strong>Add margin.</strong></li>
+        <li>
+          Background colour fills content + <strong>padding</strong>, but not
+          the <strong>margin</strong>.
+        </li>
+      </ul>
 
-    <h2>3) Add a <em>border</em> (the edge of the box)</h2>
-    <pre><code>.card {
-  padding: 16px;
-  border: 4px solid #8f2a8f;
-}</code></pre>
-    <p><strong>What you’ll notice</strong></p>
-    <ul>
-      <li>A clear outline appears.</li>
-      <li>
-        The border sits <em>outside</em> the padding. The background does
-        <strong>not</strong> fill the border area; the border paints itself.
-      </li>
-    </ul>
-
-    <h2>4) Add a <em>margin</em> (space around the box)</h2>
-    <pre><code>.card {
-  padding: 16px;
-  border: 4px solid #8f2a8f;
-  margin: 24px;
-}</code></pre>
-    <p><strong>What you’ll notice</strong></p>
-    <ul>
-      <li>The box steps back from everything else around it.</li>
-      <li>Margin is <strong>transparent</strong> — no color fills here.</li>
-      <li>It doesn’t enlarge the “clickable” area; it’s just outside space.</li>
-    </ul>
-
-    <h2>5) Directional control (top/right/bottom/left)</h2>
-    <p>All three—padding, border, margin—can target specific sides.</p>
-    <ul>
-      <li>One value: <code>padding: 20px;</code></li>
-      <li>
-        Two values: <code>padding: 12px 24px;</code> → <code>12px</code> top
-        &amp; bottom, <code>24px</code> left &amp; right
-      </li>
-      <li>
-        Four values (clockwise): <code>padding: 8px 16px 24px 32px;</code> →
-        top, right, bottom, left
-      </li>
-      <li>
-        Individual sides: <code>padding-top</code>, <code>border-left</code>,
-        <code>margin-bottom</code>, etc.
-      </li>
-    </ul>
-    <p>Example:</p>
-    <pre><code>.card {
-  padding: 12px 24px;     /* comfy left/right for easy reading */
-  border: 2px dashed #8f2a8f;
-  margin: 40px auto;      /* centers the box when it has a fixed width */
-  width: 320px;           /* needed for the centering trick */
-}</code></pre>
-    <p>
-      <strong>Tip:</strong> <code>margin: 0 auto;</code> horizontally centers a
-      block with a set width.
-    </p>
-
-    <h2>6) Common gotchas (and easy fixes)</h2>
-    <ul>
-      <li>
-        <strong>Clickable area vs spacing</strong> — Padding
-        <em>increases</em> the clickable/tap area; margin doesn’t. For larger
-        buttons, use <strong>padding</strong>.
-      </li>
-      <li>
-        <strong>Vertical margin collapsing</strong> — Stacked blocks can have
-        their top/bottom margins “merge,” causing surprise gaps. A simple fix is
-        to use <strong>padding on the parent</strong> (instead of a child’s top
-        margin) for section spacing.
-      </li>
-      <li>
-        <strong>Negative values</strong> — Negative <strong>margins</strong> are
-        allowed (advanced layout tricks), but
-        <strong>negative padding</strong> isn’t.
-      </li>
-      <li>
-        <strong>Total size math</strong> — Borders and padding normally add to
-        width/height. If you want the declared width to include them, use:
-      </li>
-    </ul>
-    <pre><code>* { box-sizing: border-box; }</code></pre>
-    <ul>
-      <li>
-        <strong>Use <code>gap</code> for modern layouts</strong> — When using
-        Flexbox or Grid, prefer <code>gap</code> for spacing
-        <em>between</em> items instead of margins on children.
-      </li>
-    </ul>
-
-    <h2>7) Quick visual summary</h2>
-    <ul>
-      <li>
-        <strong>Padding</strong> = inside space for comfort and readability.
-      </li>
-      <li><strong>Border</strong> = visible edge for separation/emphasis.</li>
-      <li>
-        <strong>Margin</strong> = outside space for breathing room between
-        boxes.
-      </li>
-    </ul>
-    <p>House analogy:</p>
-    <ul>
-      <li>Padding = the <strong>rooms</strong> inside your house</li>
-      <li>Border = the <strong>walls</strong></li>
-      <li>Margin = your <strong>front yard</strong></li>
-    </ul>
-
-    <h2>Handy cheat sheet</h2>
-    <ul>
-      <li>
-        <strong>Padding</strong>: inside space → improves readability; increases
-        clickable area.
-      </li>
-      <li><strong>Border</strong>: the outline → adds visual definition.</li>
-      <li>
-        <strong>Margin</strong>: outside space → separates elements from
-        neighbors.
-      </li>
-      <li>
-        Prefer <strong><code>gap</code></strong> in Flex/Grid.
-      </li>
-      <li>
-        Consider <strong><code>box-sizing: border-box;</code></strong> for saner
-        sizing.
-      </li>
-    </ul>
-
-    <p>
-      If you remember just this: <strong>padding = inside</strong>,
-      <strong>border = edge</strong>, <strong>margin = outside</strong>, you’ll
-      already make cleaner, calmer layouts—no deep tech knowledge required.
-    </p>
+      <p>
+        <strong>Remember:</strong> Padding = inside comfort, Border = the frame,
+        Margin = outside breathing room.
+      </p>
+    </article>
   </body>
 </html>
