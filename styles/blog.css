@@ -1,7 +1,7 @@
 :root {
   --bg: #f6eef8; /* soft lilac background */
   --text: #1f2937; /* slate-900 */
-  --brand: #c147c1; /* your h1 purple */
+  --brand: #c147c1; /* h1 purple */
   --brand-700: #8f2a8f;
   --accent: #2aa34a; /* optional green accent */
   --card: #ffffff;
@@ -14,13 +14,22 @@
 html {
   color-scheme: light;
 }
+
 body {
-  margin: 10rem;
+  margin: 0; /* was 10rem – caused huge white borders */
   background: var(--bg);
   color: var(--text);
   font-family: 'Mulish', 'Muli', system-ui, -apple-system, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
+}
+
+/* Fix: the element is <img>, not <image> */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 /* ---- Layout ---- */
@@ -29,6 +38,26 @@ body {
   margin-inline: auto;
   padding: 1.25rem;
   display: block; /* stacked by default (mobile-first) */
+}
+
+/* Main content + right-side image */
+.main {
+  width: min(1100px, 100% - 2rem);
+  margin-inline: auto;
+  padding-block: 1rem;
+  display: flex;
+  flex-direction: column; /* stack on small screens */
+  gap: 2rem;
+}
+.content {
+  flex: 1 1 auto;
+}
+.side-image {
+  margin: 0;
+} /* for <figure> */
+.side-image img {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Optional “flow” spacing helper: apply to wrappers */
@@ -46,14 +75,6 @@ h1 {
   margin: 1.5rem auto;
   font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
   line-height: 1.2;
-}
-
-/* ---- Media ---- */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
 }
 
 /* ---- Nav ---- */
@@ -111,6 +132,18 @@ nav a:focus-visible {
     margin-top: 0;
     position: sticky;
     top: 1rem; /* handy TOC/links */
+  }
+
+  /* side-by-side layout for main area */
+  .main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .side-image {
+    flex: 0 0 320px; /* fixed column for the image */
+  }
+  .content {
+    flex: 1 1 0;
   }
 }
 
