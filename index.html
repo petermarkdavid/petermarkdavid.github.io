@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Peter’s Dev Blog</title>
+
+    <!-- Use Mulish (Muli is deprecated) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Muli&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Peters Dev Blog</title>
+
     <link href="./styles/blog.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <h1>Peter's Dev Academy Blog</h1>
+    <h1>Peter’s Dev Academy Blog</h1>
 
-    <main class="main">
+    <main class="main" id="main">
       <div class="content">
         <p>This is the beginning of my website home page.</p>
         <p>It will eventually contain a list of links to all my blogs.</p>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Blog list">
           <h2>Blog List</h2>
           <ul class="navList">
             <li>
@@ -28,22 +34,35 @@
               </a>
             </li>
             <li>
-              <a href="https://petermarkdavid.github.io/blog/html-css.html"
-                >CSS Padding, Border and Margin
+              <a href="https://petermarkdavid.github.io/blog/html-css.html">
+                CSS Padding, Border and Margin
               </a>
             </li>
-            <li><a href="">New Entry Coming Soon</a></li>
+            <li>
+              <a
+                href="https://petermarkdavid.github.io/blog/identity-values.html"
+              >
+                Identity, Values and Strengths
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://petermarkdavid.github.io/blog/learning-plan.html"
+              >
+                Learning Plan
+              </a>
+            </li>
           </ul>
         </nav>
 
-        <section class="contact">
+        <section class="contact" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Contact</h2>
           <p>
             I'd love to hear from you! You can reach me by phone or connect with
             me on LinkedIn.
           </p>
           <p>
             <strong>Mobile:</strong>
-            <!-- If the prefix is 022, this tel: is correct. Adjust if it's 021/027/etc. -->
             <a href="tel:+64221241310">+64 22 124 1310</a>
           </p>
           <p>
@@ -51,7 +70,7 @@
             <a
               href="https://www.linkedin.com/in/peterandertonnz/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Visit my LinkedIn Profile
             </a>
@@ -64,6 +83,7 @@
           src="https://media.licdn.com/dms/image/v2/C4D03AQFoczZL19cwAA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516812640624?e=1759968000&v=beta&t=9hDBlv881sfPdZJXBqpp_fVOlEC1O4LZ_6-N9yMYxsI"
           alt="Portrait of Peter Anderton"
           loading="lazy"
+          decoding="async"
         />
       </figure>
     </main>
