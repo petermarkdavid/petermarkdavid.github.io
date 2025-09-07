@@ -17,15 +17,11 @@
   --shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
 }
 
-* {
-  box-sizing: border-box;
-}
 html {
   color-scheme: light;
 }
 
 body {
-  margin: 16;
   min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
@@ -52,6 +48,7 @@ body > * + * {
 /* Images */
 img {
   display: block;
+  justify-content: center;
   margin-inline: auto;
   max-width: 100%;
   height: auto;
