@@ -27,7 +27,7 @@ html {
   color-scheme: light;
 }
 body {
-  margin: 0;
+  margin: 50px;
   min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
@@ -47,7 +47,7 @@ body {
   width: min(100% - 2rem, var(--site-w));
 }
 
-/* Gentle vertical rhythm between body children */
+/* Gentle vertical rhythm */
 body > * + * {
   margin-top: 1rem;
 }
@@ -55,7 +55,7 @@ body > * + * {
 /* Images */
 img {
   display: block;
-  margin-inline: auto; /* center images by default */
+  margin-inline: auto;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -156,8 +156,7 @@ blockquote {
   color: var(--muted);
 }
 
-/* ---- Nav (CENTERED & CONSISTENT) ---- */
-/* Use <ul class="nav"> in your HTML */
+/* ---- Nav (as buttons) ---- */
 ul.nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
@@ -171,26 +170,33 @@ ul.nav {
 ul.nav li {
   margin: 0;
 }
-
 ul.nav a {
-  /* make text centered even when it wraps */
-  display: grid;
-  place-items: center;
-  inline-size: 100%; /* fill the grid cell */
-  min-block-size: 3rem; /* consistent button height */
-  padding: 0.75rem 1rem;
-  text-align: center;
-  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  min-block-size: 3rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  letter-spacing: 0.3px;
 
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 0.5rem;
-  color: var(--brand-700);
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 4px rgba(31, 41, 55, 0.12);
+  text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.15s ease;
 }
 ul.nav a:is(:hover, :focus-visible) {
-  background: #fff;
-  outline: 2px solid var(--brand-700);
-  outline-offset: 2px;
+  background: var(--brand-700);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+  outline: none;
+}
+ul.nav a:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(31, 41, 55, 0.2);
 }
 
 /* ---- Footer ---- */
@@ -202,9 +208,9 @@ ul.nav a:is(:hover, :focus-visible) {
   font-size: 0.95rem;
 }
 
-/* ---------- Basic responsive behaviour ---------- */
+/* ---------- Responsive ---------- */
 
-/* ≤ 480px — super small phones */
+/* ≤ 480px */
 @media (max-width: 480px) {
   :root {
     --max-w: 68ch;
@@ -217,10 +223,10 @@ ul.nav a:is(:hover, :focus-visible) {
   }
   .side-image {
     display: none;
-  } /* hide portrait */
+  }
   ul.nav {
     grid-template-columns: 1fr;
-  } /* one pill per row */
+  }
   ul.nav a {
     min-block-size: 2.75rem;
     padding: 0.6rem 0.8rem;
@@ -231,7 +237,7 @@ ul.nav a:is(:hover, :focus-visible) {
   }
 }
 
-/* ≥ 640px — small devices */
+/* ≥ 640px */
 @media (min-width: 640px) {
   ul.nav {
     grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
@@ -244,24 +250,24 @@ ul.nav a:is(:hover, :focus-visible) {
   }
 }
 
-/* ≥ 768px — tablets */
+/* ≥ 768px */
 @media (min-width: 768px) {
   :root {
     --max-w: 74ch;
   }
   body > * + * {
     margin-top: 1.25rem;
-  } /* looser rhythm */
+  }
   ul.nav {
     max-width: min(48rem, 100% - 2rem);
   }
 }
 
-/* ≥ 1024px — laptops: switch to two columns */
+/* ≥ 1024px */
 @media (min-width: 1024px) {
   .main {
     display: grid;
-    grid-template-columns: 3fr 1.2fr; /* content + image */
+    grid-template-columns: 3fr 1.2fr;
     gap: 2rem;
     align-items: start;
   }
@@ -274,7 +280,7 @@ ul.nav a:is(:hover, :focus-visible) {
   }
 }
 
-/* ≥ 1280px — desktops: stick the portrait, roomier nav */
+/* ≥ 1280px */
 @media (min-width: 1280px) {
   :root {
     --site-w: 1200px;
@@ -291,7 +297,7 @@ ul.nav a:is(:hover, :focus-visible) {
   }
 }
 
-/* ≥ 1536px — big desktops */
+/* ≥ 1536px */
 @media (min-width: 1536px) {
   :root {
     --site-w: 1280px;
@@ -300,17 +306,5 @@ ul.nav a:is(:hover, :focus-visible) {
   ul.nav {
     max-width: 60rem;
     gap: 1rem;
-  }
-}
-
-/* Motion preference (nice but optional) */
-@media (prefers-reduced-motion: no-preference) {
-  ul.nav a {
-    transition: box-shadow 0.15s ease, background-color 0.15s ease,
-      transform 0.15s ease;
-  }
-  ul.nav a:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow);
   }
 }
