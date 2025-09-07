@@ -3,6 +3,7 @@
   --bg: #f6eef8;
   --text: #1f2937;
   --brand: #c147c1;
+  --brand-700: #8f2a8f;
   --accent: #2aa34a;
   --card: #ffffff;
   --muted: #6b7280;
@@ -24,19 +25,15 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 16;
   min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
   font-family: 'Mulish', system-ui, -apple-system, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
   line-height: 1.7;
-
-  /* make the stripe visible */
-  border-inline-start: 16px solid var(--brand);
 }
 
-/* Constrain readable width for actual article content
 .content {
   max-width: var(--max-w);
 }
@@ -54,10 +51,11 @@ body > * + * {
 
 /* Images */
 img {
+  display: block;
+  margin-inline: auto;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  margin: auto;
 }
 
 /* ---- Layout wrappers ---- */
@@ -168,16 +166,23 @@ blockquote {
 
 /* ---- Nav ---- */
 nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: clamp(0.5rem, 2vw, 1rem);
   padding: 0;
-  margin: 0 0 1rem;
+  margin-block-end: 1rem;
+  list-style: none;
+  max-width: min(48rem, 100% - 2rem);
+  margin-inline: auto;
+  align-items: stretch;
 }
+
 nav a {
-  display: block;
-  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem; /* consistent button height */
+  padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.7);
