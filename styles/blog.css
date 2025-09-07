@@ -116,10 +116,6 @@ ul,
 ol {
   padding-inline-start: 1.25rem;
 }
-/* only add vertical spacing in content lists, not nav */
-.content li + li {
-  margin-top: 0.25rem;
-}
 
 /* Links */
 a {
