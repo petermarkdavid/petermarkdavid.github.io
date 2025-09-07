@@ -46,7 +46,7 @@ I changed the names of a website I used to work for.  Nothing funny, just testin
 
 ### Write a small story about HTML and CSS and their relationship. You could personify elements or speak from your own personal experience. The story should capture insight about the nature of HTML and CSS.  
 
-
+HTML is the content on the page and CSS is the styling
 
 ### Any moments of surprise or joy? 
 
