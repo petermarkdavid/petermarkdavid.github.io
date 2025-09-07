@@ -286,10 +286,7 @@ ul.nav a:active {
     --site-w: 1200px;
     --max-w: 78ch;
   }
-  .side-image {
-    position: sticky;
-    top: 1rem;
-  }
+
   ul.nav {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     max-width: 56rem;
