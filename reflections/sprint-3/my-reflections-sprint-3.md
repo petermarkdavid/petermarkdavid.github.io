@@ -20,11 +20,11 @@ I have downloaded the app and I will attempt one meditation a day, early in the 
 
 ### What was it like to be fully listened to? 
 
-
+I was a little self aware and I was surprised that Patrick was able to summarise my 2 mins in closer to one minute.
 
 ### What was it like to fully listen?
 
-    
+At first it did feel like a test but it was much easier to focus on what Patrick was saying when I was not responding or joining in the conversation.    
 
 
 
