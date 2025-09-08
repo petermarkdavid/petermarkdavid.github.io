@@ -2,6 +2,7 @@
 
 // 1. Complete the `hello` function by returning the string 'Hello world!'.
 // hint: do this inside the function body, i.e. inside of the curly brackets.
+// test
 function hello() {
   return 'Hello world!'
 }
