@@ -4,15 +4,15 @@
 
 ### Do you have any biases for or against mindfulness? If so, can you describe them?
 
-
+I have a bias from work after there was a group of people that practiced mindfullness early in the workday.  I saw this as unnessecary and self indulgent.
 
 ### How did you find the overall experience? 
 
-
+Surprisingly I did enjoy the mindfullness exercise.  I came closeto falling asleep but I felt quite refreshed after it.
 
 ### What's your daily habit commitment for mindfulness? 
     
-
+I have downloaded the app and I will attempt one meditation a day, early in the day or additionally if I am struggling with focus.
 
 
 
