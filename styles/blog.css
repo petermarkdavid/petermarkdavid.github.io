@@ -134,11 +134,13 @@ pre {
   color: var(--code-fg);
   padding: 1rem 1.25rem;
   border-radius: var(--radius);
-  overflow-x: auto;
   border: 1px solid #0b1220;
   border-inline-start: 0;
-  width: min(100% - 2rem, 68ch);
-  margin-inline: auto;
+  margin-inline: 0; /* was auto; now left-aligned */
+  white-space: pre-wrap; /* wrap long lines but keep whitespace */
+  overflow-wrap: anywhere; /* allow breaking long tokens */
+  word-break: break-word; /* extra safety for very long strings */
+  overflow-x: hidden; /* no horizontal scroll bar */
 }
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -150,7 +152,6 @@ code {
 blockquote {
   margin: 1rem auto;
   padding: 0.5rem 1rem;
-  border-inline-start: 4px solid var(--brand-700);
   background: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
   color: var(--muted);

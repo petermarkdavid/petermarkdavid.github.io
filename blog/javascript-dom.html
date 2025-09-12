@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../styles/blog.css" rel="stylesheet" type="text/css" />
+    <title>Learning JavaScript</title>
+  </head>
+  <body>
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li>
+          <a href="https://petermarkdavid.github.io/index.html">Home</a>
+        </li>
+      </ul>
+    </nav>
+    <body>
+      <h1>Learning JavaScript</h1>
+      <main class="main">
+        <article class="content">
+          <section id="html-css-js">
+            <h2>HTML, CSS, and JavaScript</h2>
+            <p>
+              <strong>HTML</strong> is like the <em>script of a play</em>. It
+              decides which characters appear on stage and what props are
+              present.
+            </p>
+            <p>
+              <strong>CSS</strong> is like the
+              <em>stage design and costumes</em>. It gives the styling of the
+              scene depending on what the designer wants to present.
+            </p>
+            <p>
+              <strong>JavaScript</strong> is like the <em>actors</em>. They move
+              around, deliver lines, and sometimes engage with the audience.
+            </p>
+            <blockquote>
+              Without JavaScript, your website might look pretty, but it won’t
+              do anything.
+            </blockquote>
+
+            <h3>Example</h3>
+            <p>Button in HTML:</p>
+            <pre><code>&lt;button id="doorbell"&gt;Ring Doorbell&lt;/button&gt;</code></pre>
+
+            <p>CSS to style it:</p>
+            <pre><code>#doorbell {
+  background-color: skyblue;
+  padding: 10px;
+  font-size: 16px;
+}</code></pre>
+
+            <p>JavaScript to make it do something:</p>
+            <pre><code>document.getElementById("doorbell").addEventListener("click", () =&gt; {
+  alert("Ding dong! Someone’s at the door");
+});</code></pre>
+
+            <p>
+              When you click the button, JavaScript makes the doorbell ring!
+            </p>
+          </section>
+
+          <section id="control-flow">
+            <h2>Control Flow and Loops</h2>
+            <p>
+              <strong>Control Flow</strong> is the order in which things happen.
+            </p>
+            <p>
+              Here’s an example of a loop. Imagine making
+              <strong>cocktails for guests at a party</strong>:
+            </p>
+
+            <p><strong>Start:</strong> Put ice in the cocktail shaker.</p>
+            <p><strong>Loop: For each person</strong></p>
+            <ul>
+              <li>Add the required alcohol in the shaker.</li>
+              <li>Add the mixer.</li>
+              <li>Pour it into the glass.</li>
+            </ul>
+            <p>
+              <strong>End:</strong> Once you’ve gone through all the guests, you
+              stop.
+            </p>
+
+            <p>
+              That’s exactly how a loop works: repeating steps until you’re
+              done.
+            </p>
+
+            <h3>JavaScript version</h3>
+            <pre><code>let guests = ["Matthew", "Dawn", "Gary"];
+
+for (let guest of guests) {
+  console.log("Make cocktail for " + guest);
+}</code></pre>
+
+            <p><strong>Output</strong></p>
+            <pre><code>Make cocktail for Matthew
+Make cocktail for Dawn
+Make cocktail for Gary</code></pre>
+          </section>
+
+          <section id="dom">
+            <h2>What is the DOM?</h2>
+            <p>
+              The <strong>DOM (Document Object Model)</strong> is like a living
+              map of your webpage. Every heading, image, and button is a
+              “branch” on the tree called a node.
+            </p>
+            <p>
+              With JavaScript, navigate the tree, grab a node, and change it.
+              For example (the <code>document</code> is the top of the page’s
+              node tree under the “window”):
+            </p>
+            <pre><code>document.querySelector("h1").textContent = "Hello, World!";</code></pre>
+            <p>
+              That one line of code changes the text of the
+              <code>&lt;h1&gt;</code> heading.
+            </p>
+          </section>
+
+          <section id="arrays-objects">
+            <h2>Arrays vs. Objects</h2>
+            <p><strong>Arrays</strong> are like numbered shopping lists.</p>
+            <pre><code>let shoppingList = ["milk", "bread", "apples"];
+console.log(shoppingList[0]); // milk</code></pre>
+            <p>You get items based on their number starting from 0.</p>
+
+            <p><strong>Objects</strong> are like labeled boxes.</p>
+            <pre><code>let dog = { name: "Frank", breed: "Jack Russell", age: 2 };
+console.log(dog.name); // Frank</code></pre>
+            <p>
+              You don’t care about the order — you grab things by their label
+              (<code>name</code>, <code>breed</code>, <code>age</code>).
+            </p>
+          </section>
+
+          <section id="functions">
+            <h2>Functions</h2>
+            <p>
+              A <strong>function</strong> is like a recipe. Instead of writing
+              out the whole recipe every time you want to make a cocktail, you
+              keep the instructions in one place and reuse them.
+            </p>
+            <pre><code>function makeCocktail(name) {
+  console.log("Here’s a cocktail for " + name);
+}
+
+makeCocktail("Matthew"); // Here’s a cocktail for Matthew
+makeCocktail("Dawn");    // Here’s a cocktail for Dawn</code></pre>
+            <p>
+              Why are functions helpful? Because they save time, keep your code
+              tidy, and let you reuse logic over and over again.
+            </p>
+          </section>
+        </article>
+      </main>
+    </body>
+  </body>
+</html>
