@@ -4,11 +4,11 @@
 
 ### Do you have any biases for or against mindfulness? If so, can you describe them?
 
-I have a bias from work after there was a group of people that practiced mindfullness early in the workday.  I saw this as unnessecary and self indulgent.
+In my previous job there was a group of people that practiced mindfullness early in the workday.  I saw this as unnessecary and self indulgent.
 
 ### How did you find the overall experience? 
 
-Surprisingly I did enjoy the mindfullness exercise.  I came closeto falling asleep but I felt quite refreshed after it.
+Surprisingly I did enjoy the mindfullness exercise.  I came close to falling asleep but I felt quite refreshed after it.
 
 ### What's your daily habit commitment for mindfulness? 
     
@@ -33,11 +33,11 @@ At first it did feel like a test but it was much easier to focus on what Patrick
 
 ### What did you notice about your learning style? What worked for you, and why?
 
-
+I felt quite happy watching and following the videos.
 
 ### Did you keep within the timebox suggestions? If not, was it due to difficulty understanding the basics, or a feeling like you had to _master_ the basics?
 
-
+Pretty much yes, until I had a repo issue pushing and it took me way long to fix it the first time.
 
 
 
@@ -46,9 +46,9 @@ At first it did feel like a test but it was much easier to focus on what Patrick
 
 ### How did you find coding along to the JavaScript Cafe lecture? Did this help you see how combining JavaScript and the DOM interact together?
 
-
+It was onteresting but felt like it went from basics to really complex super fast.
 
 ### What was something you learned or realised from doing this activity?
 
-
+I realised that I seem to struggle the first time going through content so I might need to review things twice.
 
