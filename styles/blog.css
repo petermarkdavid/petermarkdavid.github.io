@@ -47,7 +47,7 @@ body {
   width: min(100% - 2rem, var(--site-w));
 }
 
-/* Gentle vertical rhythm */
+/* Gentle vertical rhythms */
 body > * + * {
   margin-top: 1rem;
 }
