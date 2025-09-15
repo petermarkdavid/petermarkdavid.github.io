@@ -1,31 +1,27 @@
 :root {
-  /* Colors - Enhanced with better contrast and modern palette */
-  --bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  --bg-solid: #f8fafc;
-  --text: #0f172a;
-  --text-muted: #475569;
-  --brand: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  --brand-solid: #6366f1;
-  --brand-700: #4f46e5;
-  --brand-800: #3730a3;
-  --accent: #10b981;
-  --accent-light: #34d399;
+  /* Simple, clean color palette */
+  --bg: #fafafa;
+  --text: #2d3748;
+  --text-light: #4a5568;
+  --brand: #2d3748;
+  --brand-light: #4a5568;
+  --accent: #3182ce;
+  --accent-light: #63b3ed;
   --card: #ffffff;
-  --card-hover: #f8fafc;
-  --muted: #64748b;
-  --code-bg: #0f172a;
+  --muted: #718096;
+  --code-bg: #2d3748;
   --code-fg: #e2e8f0;
   --border: #e2e8f0;
-  --border-light: #f1f5f9;
+  --border-light: #f7fafc;
 
   /* Layout tokens */
   --max-w: 72ch;
   --site-w: 1100px;
-  --radius: 16px;
-  --radius-sm: 8px;
-  --shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --radius: 8px;
+  --radius-sm: 4px;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Base */
@@ -43,9 +39,8 @@ body {
   min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Mulish', system-ui, -apple-system, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.7;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -87,7 +82,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border);
 }
 
 .content {
@@ -119,64 +114,41 @@ h1 {
   text-align: center;
   background: var(--brand);
   color: #fff;
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 2rem;
   border-radius: var(--radius);
   margin: 0 auto 2rem;
-  font-size: clamp(2.2rem, 1.5rem + 2.5vw, 3.2rem);
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  box-shadow: var(--shadow-lg);
-  position: relative;
-  overflow: hidden;
-}
-
-h1::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-h1:hover::before {
-  left: 100%;
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 2.5rem);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  box-shadow: var(--shadow);
 }
 
 h2,
 h3 {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
-  line-height: 1.3;
+  line-height: 1.4;
   font-weight: 600;
 }
 
 h2 {
-  padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, var(--brand-solid), var(--brand-700));
-  color: white;
-  border-radius: var(--radius-sm);
-  border: none;
+  color: var(--brand);
   font-size: 1.5rem;
-  letter-spacing: -0.01em;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
 }
 
 h3 {
-  color: var(--brand-700);
+  color: var(--brand-light);
   font-size: 1.25rem;
-  padding-left: 0.5rem;
-  border-left: 3px solid var(--accent);
   margin-left: 0;
 }
 
 p,
 li {
-  font-size: 1.1rem;
-  color: var(--text-muted);
+  font-size: 1rem;
+  color: var(--text-light);
   margin-bottom: 1rem;
 }
 
@@ -188,54 +160,37 @@ ol {
 
 li {
   margin-bottom: 0.5rem;
-  position: relative;
 }
 
 ul li::marker {
-  color: var(--brand-solid);
+  color: var(--accent);
 }
 
 ol li::marker {
-  color: var(--brand-solid);
+  color: var(--accent);
   font-weight: 600;
 }
 
 /* Links */
 a {
-  color: var(--brand-solid);
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
   transition: color 0.2s ease;
-}
-
-a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background: var(--brand);
-  transition: width 0.3s ease;
 }
 
 a:hover,
 a:focus-visible {
-  color: var(--brand-700);
+  color: var(--accent-light);
   outline: none;
-}
-
-a:hover::after,
-a:focus-visible::after {
-  width: 100%;
 }
 
 /* Code */
 pre {
   background: var(--code-bg);
   color: var(--code-fg);
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   margin: 1.5rem 0;
@@ -244,61 +199,37 @@ pre {
   word-break: break-word;
   overflow-x: hidden;
   box-shadow: var(--shadow);
-  position: relative;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-pre::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--brand);
-  border-radius: var(--radius) var(--radius) 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 code {
-  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 
 /* Inline code */
 p code, li code {
   background: var(--border-light);
-  color: var(--brand-700);
+  color: var(--brand);
   padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.9em;
+  border-radius: 3px;
+  font-size: 0.85em;
   font-weight: 500;
 }
 
 /* Blockquotes */
 blockquote {
-  margin: 2rem 0;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, var(--card-hover), var(--border-light));
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background: var(--border-light);
   border-radius: var(--radius);
   border-left: 4px solid var(--accent);
-  color: var(--text-muted);
+  color: var(--text-light);
   font-style: italic;
   box-shadow: var(--shadow);
-  position: relative;
-}
-
-blockquote::before {
-  content: '"';
-  font-size: 4rem;
-  color: var(--accent);
-  position: absolute;
-  top: -0.5rem;
-  left: 1rem;
-  line-height: 1;
-  opacity: 0.3;
 }
 
 /* ---- Nav (as buttons) ---- */
@@ -321,67 +252,50 @@ ul.nav a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 1.5rem;
-  min-block-size: 3.5rem;
+  padding: 0.75rem 1.25rem;
+  min-block-size: 3rem;
   border-radius: var(--radius);
-  font-weight: 600;
-  letter-spacing: 0.025em;
-  font-size: 1.05rem;
+  font-weight: 500;
+  font-size: 1rem;
   
   background: var(--brand);
   color: #fff;
-  border: none;
+  border: 1px solid var(--brand);
   box-shadow: var(--shadow);
   text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-ul.nav a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  transition: all 0.2s ease;
 }
 
 ul.nav a:is(:hover, :focus-visible) {
-  background: var(--brand-700);
+  background: var(--brand-light);
+  border-color: var(--brand-light);
   box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
+  transform: translateY(-1px);
   outline: none;
 }
 
-ul.nav a:hover::before {
-  left: 100%;
-}
-
 ul.nav a:active {
-  transform: translateY(-1px);
+  transform: translateY(0);
   box-shadow: var(--shadow);
 }
 
 /* ---- Footer ---- */
 .footer {
   width: min(var(--site-w), 100% - 2rem);
-  margin: 3rem auto 1.5rem;
-  padding: 2rem;
+  margin: 2rem auto 1.5rem;
+  padding: 1.5rem;
   background: var(--card);
   border-radius: var(--radius);
   color: var(--muted);
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   box-shadow: var(--shadow);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border);
 }
 
 .footer p {
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* ---------- Responsive ---------- */
