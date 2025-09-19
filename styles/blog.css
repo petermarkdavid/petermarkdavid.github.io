@@ -250,7 +250,7 @@ ul.nav li {
 
 ul.nav a {
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 0.75rem 1.25rem;
   min-block-size: 3rem;
